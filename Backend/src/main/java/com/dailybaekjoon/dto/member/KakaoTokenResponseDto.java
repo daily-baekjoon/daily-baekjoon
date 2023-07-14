@@ -5,9 +5,13 @@ import jdk.jfr.Description;
 import lombok.*;
 
 @Getter
-@Data
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 // NOTE : 카카오 API에게 code값 넘겨주고 아래 항목 받아옴
-public class KakaoTokenResponse {
+public class KakaoTokenResponseDto {
     @Description("사용자 엑세스 토큰 값")
     @JsonProperty("access_token")
     private String accessToken;

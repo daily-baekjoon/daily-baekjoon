@@ -22,16 +22,16 @@ public class Member {
     @Column(name = "member_id")
     private Long memberId;
 
-    @Column(name = "name", nullable = true, unique = true)//소셜로그인 추가되면서 기존 email nullable = true 수정
+    @Column(name = "name", nullable = true, unique = true)// 소셜로그인 추가되면서 기존 email nullable = true 수정
     private String name;
 
-    @Column(name = "email", nullable = false) //소셜로그인 추가되면서 기존 password nullable = true 수정
+    @Column(name = "email", nullable = false) // 소셜로그인 추가되면서 기존 password nullable = true 수정
     private String email;
 
     @Column(name = "boj_id", nullable = true, length = 50, unique = true) // boj_id = null (최초 로그인시를 대비함)
     private String bojId;
 
-    @Column(name = "nickname", nullable = true) //소셜로그인 추가되면서 기존 password nullable = true 수정
+    @Column(name = "nickname", nullable = true) // 소셜로그인 추가되면서 기존 password nullable = true 수정
     private String nickName;
 
     @Column(name = "access_token", nullable = false, length = 155, unique = true)

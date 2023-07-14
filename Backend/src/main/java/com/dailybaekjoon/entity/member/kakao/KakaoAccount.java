@@ -8,4 +8,5 @@ public class KakaoAccount {
     private Boolean is_email_valid;
     private Boolean is_email_verified;
     private String email;
+
 }

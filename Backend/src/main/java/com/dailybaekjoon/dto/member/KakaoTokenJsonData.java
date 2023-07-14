@@ -24,15 +24,15 @@ public class KakaoTokenJsonData {
     private String CLIENT_SECRET;
 
 
-    public KakaoTokenResponse getToken(String code) {
+    public KakaoTokenResponseDto getToken(String code) {
         String uri = TOKEN_URI + "?grant_type=" + GRANT_TYPE + "&client_id=" + CLIENT_ID + "&client_secret="+CLIENT_SECRET+"&redirect_uri=" + REDIRECT_URI + "&code=" + code;
         System.out.println(uri);
 
-        Flux<KakaoTokenResponse> response = webClient.post()
+        Flux<KakaoTokenResponseDto> response = webClient.post()
                 .uri(uri)
                 .contentType(MediaType.APPLICATION_JSON)
                 .retrieve()
-                .bodyToFlux(KakaoTokenResponse.class);
+                .bodyToFlux(KakaoTokenResponseDto.class);
 
         return response.blockFirst();
     }
